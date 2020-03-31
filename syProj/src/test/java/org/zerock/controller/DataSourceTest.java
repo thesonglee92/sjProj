@@ -12,7 +12,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(
-		locations = {"file:/src/main/webapp/WEB-INF/spring/root-context.xml"})
+		locations = {"file:/Users/song/git/sjProj/syProj/src/main/webapp/WEB-INF/spring/root-context.xml"})
 //@Controller
 public class DataSourceTest {
 
