@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<!-- Root Context: defines shared resources visible to all other web components -->
+	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+	<!-- spring-jdbc-5.0.7.Release.jar  -->
+		<property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+		<!-- mysql-connector-java/5.1.46/mysql-connector-java-5.1.46.jar -->
+		<property name="url" value="jdbc:mysql://localhost:3306/sy_db"/>
+		<property name="username" value="syAdmin"/>
+		<property name="password" value="123456"/>
+	</bean>	
+	
+	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+	<!--  mybatis-spring-1.3.0.jar -->
+		<property name="dataSource" ref="dataSource"/>
+		<property name="configLocation" value="classpath:/mybatis-config.xml"/>
+		<property name="mapperLocations" value="classpath:/org/zerock/mappers/*/*.xml"/>
+	</bean>
+	
+	<bean id="sqlSession"  class="org.mybatis.spring.SqlSessionTemplate" destroy-method="clearCache">
+		<constructor-arg name="sqlSessionFactory" ref="sqlSessionFactory"/>
+	</bean> 
+		
+</beans>
