@@ -36,10 +36,14 @@ public class HomeController {
 		return "home";
 	}
 
+	@RequestMapping(value = "/rent", method = RequestMethod.GET)
+	public String rent() {
+	    return "rent";
+	}
 	
-	@RequestMapping(value = "/map", method = RequestMethod.GET)
-	public String map() {
-	    return "map";
+	@RequestMapping(value = "/bikerent", method = RequestMethod.GET)
+	public String bikerent() {
+	    return "bikerent";
 	}
 }
 
