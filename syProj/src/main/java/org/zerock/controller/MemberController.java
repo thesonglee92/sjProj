@@ -21,6 +21,12 @@ public class MemberController {
 	@Autowired
 	private MemberService service;
 	
+	@RequestMapping("/login")
+	public String login() {
+		return "/member/login";
+	}
+	
+	
 	// 로그인
 	@RequestMapping(value="/signin", method=RequestMethod.POST)
 	public String signin(@ModelAttribute MemberVO mem, RedirectAttributes rttr, HttpServletRequest request) {
