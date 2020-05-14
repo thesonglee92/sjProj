@@ -26,7 +26,7 @@
 </head>
 <body>
 <div class="signin">
-<form method="post" action="/lighthouse/signin">
+<form method="post" action="/controller/signin">
 <table>
 	<tr>
 		<th align="center" colspan="3">로그인</th>
