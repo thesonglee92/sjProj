@@ -63,9 +63,10 @@ body{
 #placesList .item .marker_13 {background-position: 0 -562px;}
 #placesList .item .marker_14 {background-position: 0 -608px;}
 #placesList .item .marker_15 {background-position: 0 -654px;}
-#pagination {margin:10px auto;text-align: center;}
-#pagination a {display:inline-block;margin-right:10px;}
+#pagination {margin:8px auto;text-align: center;}
+#pagination a {display:inline-block;margin-right:8px;}
 #pagination .on {font-weight: bold; cursor: default;color:#777;}
+
 </style>
 
 </head>
@@ -74,7 +75,7 @@ body{
 
 <nav>
 	<ul class = "nav-container">
-		<li class="nav-item"><a href="./bikerent">대여하기</a></li>
+		<li class="nav-item"><a href="javascript:popup()">대여하기</a></li>
 	</ul>
 </nav>
 <div class="map_wrap">
@@ -84,7 +85,7 @@ body{
         <div class="option">
             <div>
                 <form onsubmit="searchPlaces(); return false;">
-                    키워드 : <input type="text" value="따릉이" id="keyword" size="15"> 
+                    키워드 : <input type="text" value="여의도 따릉이" id="keyword" size="15"> 
                     <button type="submit">검색하기</button> 
                 </form>
             </div>
@@ -95,7 +96,7 @@ body{
     </div>
 </div>
 
-<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=18827526c3924565f1f4f7141ab15422&libraries=services"></script>
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=a0cb4249761d9b825d8480f6455fdb28&libraries=services"></script>
 <script>
 // 마커를 담을 배열입니다
 var markers = [];
@@ -313,6 +314,13 @@ function removeAllChildNods(el) {
         el.removeChild (el.lastChild);
     }
 }
+function popup(){
+    var url = "./bikerent.jsp";
+    var name = "대여하기";
+    var option = "width = 500, height = 500, top = 100, left = 200, location = no"
+    window.open(url, name, option);
+}
+ 
 </script>
 </body>
 </html>
