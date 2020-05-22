@@ -7,6 +7,7 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 <configuration>
 <typeAliases> 
 		<typeAlias type="org.zerock.vo.MemberVO" alias="m"/> 
+		<typeAlias type="org.zerock.vo.BikeVO" alias="bi"/> 
 	</typeAliases>
 
 </configuration>

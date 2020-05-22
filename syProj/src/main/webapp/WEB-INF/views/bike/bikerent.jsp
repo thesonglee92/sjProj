@@ -24,7 +24,7 @@
           </tr>
                 <tr>
          <th> 대여소 위치</th>
-         <td><input type="text" name="bikename"></td>
+         <td><input type="text" name="bikename"><input type="button" id = "bikeList" name="bikedb" onClick='fn_select()' value="검색"></td>
       </tr>
          <tr>
            <th>일일권종류선택</th>
@@ -58,8 +58,18 @@
 </html>
 
 
-<script language="javascript">
+<script>
 function win_close(){
     self.close();   //자기자신창을 닫습니다.
+}
+
+//목록
+function fn_select(){
+    
+    var form = document.getElementById("bikeList");
+    
+    form.action = "<c:url value='/bikeinfo'/>";
+    form.submit();
+    
 }
 </script>
